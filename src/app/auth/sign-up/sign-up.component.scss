@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    color: white;
+  
+    &-login-form {
+      min-width: 30rem;
+    }
+  
+    & .row {
+      background-color: rgb(41, 61, 85);    
+    }
+}
+  
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20rem;
+}
