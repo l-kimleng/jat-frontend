@@ -1,4 +1,12 @@
 <section class="container">        
+    <div class="fixed-bottom">
+        <div class="alert" [ngClass]="{
+            'alert-primary': success,
+            'alert-danger': !success
+        }" 
+            role="alert" *ngIf="isDisplayMessage"> {{message}}            
+        </div>
+    </div>
     <div class="row border rounded p-5">
         <div class="col flex-container border-right">
             <div class="row">

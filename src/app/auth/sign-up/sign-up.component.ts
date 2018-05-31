@@ -12,6 +12,9 @@ import { UserValidators } from '../../commons/validators/userValidators';
 export class SignUpComponent implements OnInit {
   user: User;
   form: FormGroup;
+  isDisplayMessage: Boolean;
+  message: String;
+  success: Boolean;
 
   constructor(private _authService: AuthService) {    
   }
@@ -45,8 +48,22 @@ export class SignUpComponent implements OnInit {
   createAccount() {
     this._authService.register(this.user)
       .subscribe(res => {
-        console.log(res);
+        this.displayMessage({isSuccess: true, msg: "Signup successfully!"});   
+        localStorage.setItem("jat-token", res.headers.get('x-auth-token'));
+        // TO DO redirect to main app  
+      }, error => {
+        this.displayMessage({isSuccess: false, msg: error.message}); 
       });
+  }
+
+  displayMessage(option: any) {
+    this.isDisplayMessage = true;
+    this.success = option.isSuccess;
+    this.message = option.msg;
+    setTimeout(() => {
+      this.isDisplayMessage = false;
+      this.message = "";
+    }, 5000); 
   }
 
   get name() {
