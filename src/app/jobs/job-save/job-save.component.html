@@ -1,0 +1,97 @@
+<section class="layout-section">
+  <form>
+    <div class="container pt-5">
+      <ngb-tabset>
+        <ngb-tab title="Job Information">
+          <ng-template ngbTabContent>
+              <div class="form-group">
+                  <label for="inputTitle">Title</label>
+                  <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+              </div>                  
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="inputPostDate">Post Date</label>
+                        <div class="input-group">
+                          <input class="form-control" placeholder="Post Date"
+                                  name="dpPostDate" [(ngModel)]="modelPostDate" ngbDatepicker #d="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                              <img src="assets/calendar.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputAppliedDate">Applied Date</label>
+                      <div class="input-group">
+                          <input class="form-control" placeholder="Applied Date"
+                                  name="dpAppliedDate" [(ngModel)]="modelAppliedDate" ngbDatepicker #d1="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" (click)="d1.toggle()" type="button">
+                              <img src="assets/calendar.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+              </div>
+                
+                <div class="form-group">
+                  <label for="inputUrl">URL</label>
+                  <input type="text" class="form-control" id="inputUrl" placeholder="URL">
+                </div>
+                <div class="form-group">
+                    <label for="inputComany">Company</label>
+                    <input type="text" class="form-control" id="inputCompany" placeholder="Company">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" placeholder="City" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <input type="text" placeholder="State" class="form-control" id="inputState">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" placeholder="Zip" class="form-control" id="inputZip">
+                  </div>
+                </div>               
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+          <ng-template ngbTabTitle>Recruiter Contact</ng-template>
+          <ng-template ngbTabContent>
+              <div class="form-group">
+                  <label for="inputName">Name</label>
+                  <input type="text" class="form-control" id="inputName" placeholder="Name">
+              </div>  
+              <div class="form-group">
+                <label for="inputRecruiterTitle">Title</label>
+                <input type="text" class="form-control" id="inputRecruiterTitle" placeholder="Title">
+              </div>
+              <div class="form-group">
+                  <label for="inputRecruiterCompany">Company</label>
+                  <input type="text" class="form-control" id="inputRecruiterCompany" placeholder="Company">
+              </div>
+              <div class="form-group">
+                  <label for="inputPhone">Phone</label>
+                  <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
+              </div>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col">
+          <button type="button" routerLink="/jobs" class="btn btn-primary">Cancel</button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary float-right">Save Job</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  
+</section>

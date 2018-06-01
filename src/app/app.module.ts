@@ -1,3 +1,4 @@
+import { JobSaveComponent } from './jobs/job-save/job-save.component';
 import { AuthService } from './auth/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
@@ -22,7 +23,8 @@ import { CapitalizePipe } from './commons/pipes/capitalize.pipe';
     SignUpComponent,
     SignInComponent,
     JobListComponent,
-
+    JobSaveComponent,
+    
     CapitalizePipe
 ],
   imports: [
@@ -35,7 +37,8 @@ import { CapitalizePipe } from './commons/pipes/capitalize.pipe';
       { path: '', component: SignUpComponent },
       { path: 'register', component: SignUpComponent },
       { path: 'login', component: SignInComponent},
-      { path: 'jobs', component: JobListComponent}
+      { path: 'jobs', component: JobListComponent},
+      { path: 'jobs/new', component: JobSaveComponent}
     ])  
   ],
   providers: [
