@@ -11,6 +11,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { JobListComponent } from './jobs/job-list/job-list.component';
+import { JobService } from './jobs/job.service';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { JobListComponent } from './jobs/job-list/job-list.component';
     ])  
   ],
   providers: [
-    AuthService
+    AuthService,
+    JobService
   ],
   bootstrap: [AppComponent]
 })

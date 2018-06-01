@@ -3,6 +3,7 @@ import { User } from '../../models/user';
 import { AuthService } from '../auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserValidators } from '../../commons/validators/userValidators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,7 +17,7 @@ export class SignUpComponent implements OnInit {
   message: String;
   success: Boolean;
 
-  constructor(private _authService: AuthService) {    
+  constructor(private _authService: AuthService, private _router: Router) {    
   }
 
   ngOnInit() {
@@ -50,7 +51,7 @@ export class SignUpComponent implements OnInit {
       .subscribe(res => {
         this.displayMessage({isSuccess: true, msg: "Signup successfully!"});   
         localStorage.setItem("jat-token", res.headers.get('x-auth-token'));
-        // TO DO redirect to main app  
+        this._router.navigate(['/jobs']);
       }, error => {
         this.displayMessage({isSuccess: false, msg: error.message}); 
       });

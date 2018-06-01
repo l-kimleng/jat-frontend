@@ -36,14 +36,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let j of jobs; let i = index">
                 <th scope="row">1</th>
-                <td>ASP.NET Web Developer</td>
-                <td>2018-05-23</td>
-                <td>2018-05-28</td>
-                <td>Microsoft</td>
-                <td>Cambridge, MA 1211</td>
-                <td>Ross Fournier</td>
+                <td>{{j.title}}</td>
+                <td>{{j.postDate | date}}</td>
+                <td>{{j.appliedDate | date}}</td>
+                <td>{{j.company.name}}</td>
+                <td>{{j.company.location.city}}, {{j.company.location.state}} {{j.company.location.zipCode}}</td>
+                <td>{{j.recruiter.name}}</td>
               </tr>              
             </tbody>
           </table>
