@@ -15,11 +15,12 @@
             </div>
             <div class="row">
                 <span class="display-4">Create your <br/> account</span>
-                <span class="mt-3"> <em>Already have an account with us? <a href="#">Log in</a> instead.</em></span>
+                <span class="mt-3"> <em>Already have an account with us? <a routerLink="/login">Log in</a> instead.</em></span>
             </div>
             <div class="row">
                 Sign up for a free account to 
-                create fully managed your job applied. No credit card required.</div>
+                create fully managed your job applied. No credit card required.
+            </div>
         </div>
         <div class="col container-login-form ml-3">
             <form class="novalidate" [formGroup]="form" (ngSubmit)="createAccount()">

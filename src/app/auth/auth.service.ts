@@ -19,4 +19,15 @@ export class AuthService {
             observe: 'response'
         });
     }
+
+    login(user: User) {
+        return this._http.post(`${environment.apiUrl}/api/login`, {
+            email: user.email,
+            password: user.password
+        }, 
+        {
+            headers: new HttpHeaders().set('Content-Type', 'application/json'),
+            observe: 'response'
+        });
+    }
 }
