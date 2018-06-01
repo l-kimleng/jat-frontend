@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { JobListComponent } from './jobs/job-list/job-list.component';
 import { JobService } from './jobs/job.service';
+import { CapitalizePipe } from './commons/pipes/capitalize.pipe';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { JobService } from './jobs/job.service';
     NavbarComponent,
     SignUpComponent,
     SignInComponent,
-    JobListComponent
+    JobListComponent,
+
+    CapitalizePipe
 ],
   imports: [
     BrowserModule,
