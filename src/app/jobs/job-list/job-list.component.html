@@ -1,0 +1,51 @@
+<section class="layout-section">
+    <div class="action-bar">
+      <div class="container">
+          <div class="row">
+            <div class="col col-10">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                            <button class="btn btn-outline-light rounded-0" ngbDropdownToggle>Search by</button>
+                            <div class="dropdown-menu" ngbDropdownMenu>
+                              <button class="dropdown-item">Title</button>
+                              <button class="dropdown-item">Company</button>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search here" aria-label="Text input with dropdown button">
+                </div>
+            </div>
+            <div class="col col-2">
+              <button type="button" class="btn btn-primary float-right">Create Job</button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="container pt-5">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Post Date</th>
+                <th scope="col">Applied Date</th>
+                <th scope="col">Company</th>
+                <th scope="col">Location</th>
+                <th scope="col">Recuriter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>ASP.NET Web Developer</td>
+                <td>2018-05-23</td>
+                <td>2018-05-28</td>
+                <td>Microsoft</td>
+                <td>Cambridge, MA 1211</td>
+                <td>Ross Fournier</td>
+              </tr>              
+            </tbody>
+          </table>
+    </div>
+</section>

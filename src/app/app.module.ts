@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { JobListComponent } from './jobs/job-list/job-list.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
     AppComponent,
     NavbarComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    JobListComponent
 ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
     RouterModule.forRoot([
       { path: '', component: SignUpComponent },
       { path: 'register', component: SignUpComponent },
-      { path: 'login', component: SignInComponent}
+      { path: 'login', component: SignInComponent},
+      { path: 'jobs', component: JobListComponent}
     ])  
   ],
   providers: [
