@@ -11,7 +11,10 @@ export class JobSaveComponent implements OnInit {
   modelPostDate: any;
   modelAppliedDate: any;
 
-  job: Job;
+  job: Job;  
+  isDisplayMessage: Boolean;
+  message: String;
+  success: Boolean;
 
   constructor(private _jobService: JobService) { }
 
@@ -45,6 +48,8 @@ export class JobSaveComponent implements OnInit {
         phone: ""
       }
     };
+    this.modelPostDate = null;
+    this.modelAppliedDate = null;
   }
 
   saveJob() {
@@ -53,8 +58,20 @@ export class JobSaveComponent implements OnInit {
     this._jobService.createJob(this.job)
       .subscribe(res => {
         this.initForm();
+        this.displayMessage({isSuccess: true, msg: "Job applied is saved."});
       }, error => {
-        console.log(error);
+        this.displayMessage({isSuccess: false, msg: error.error});
       });
   }
+
+  displayMessage(option: any) {
+    this.isDisplayMessage = true;
+    this.success = option.isSuccess;
+    this.message = option.msg;
+    setTimeout(() => {
+      this.isDisplayMessage = false;
+      this.message = "";
+    }, 5000); 
+  }
+
 }

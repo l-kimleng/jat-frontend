@@ -1,4 +1,12 @@
 <section class="layout-section">
+    <div class="fixed-bottom">
+        <div class="alert" [ngClass]="{
+            'alert-primary': success,
+            'alert-danger': !success
+        }" 
+            role="alert" *ngIf="isDisplayMessage"> {{message}}            
+        </div>
+    </div>
   <form (ngSubmit)="saveJob()">
     <div class="container pt-5">
       <ngb-tabset>
