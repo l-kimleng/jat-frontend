@@ -3,18 +3,19 @@
       <div class="container">
           <div class="row">
             <div class="col col-10">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-                            <button class="btn btn-outline-light rounded-0" ngbDropdownToggle>Search by</button>
-                            <div class="dropdown-menu" ngbDropdownMenu>
-                              <button class="dropdown-item">Title</button>
-                              <button class="dropdown-item">Company</button>
-                            </div>
-                        </div>
+                <form (ngSubmit) = "search()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" [(ngModel)]="title" name="jobTitle" id="inputTitle" placeholder="Title">
+                          </div>
+                          <div class="form-group col-md-5">
+                              <input type="text" class="form-control" id="inputCompany" [(ngModel)]="company" name = "companyName" placeholder="Company">
+                          </div>
+                          <div class="form-group col-md-1">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                          </div>
                     </div>
-                    <input type="text" class="form-control" placeholder="Search here" aria-label="Text input with dropdown button">
-                </div>
+                </form>
             </div>
             <div class="col col-2">
               <button type="button" routerLink="/jobs/new" class="btn btn-primary float-right">Create Job</button>

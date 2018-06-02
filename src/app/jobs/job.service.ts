@@ -1,3 +1,4 @@
+import { JobQueryObject } from './../models/jobQueryObject';
 import { Job } from './../models/job';
 import { QueryObject } from './../models/queryObject';
 import { environment } from './../../environments/environment';
@@ -16,6 +17,25 @@ export class JobService {
                 fromObject: {
                    page: `${query.page}`,
                    size: `${query.pageSize}`
+                }
+            }),
+            headers: new HttpHeaders().set('x-auth-token', token)
+        });
+    }
+
+    filterJob(jobQuery: JobQueryObject) {
+        const token = localStorage.getItem('jat-token');        
+        const title = (jobQuery.title === undefined || jobQuery.title === "")? "!2$" : jobQuery.title;
+        const company = (jobQuery.company === undefined || jobQuery.company === "") ? "!2$" : jobQuery.company;
+        console.log("Title");
+        console.log(title);
+        console.log("Company");
+        console.log(company);
+        return this._http.get<Array<Job>>(`${environment.apiUrl}/api/jobs/${title+''}/${company+''}`, {
+            params: new HttpParams ({
+                fromObject: {
+                   page: `${jobQuery.query.page}`,
+                   size: `${jobQuery.query.pageSize}`
                 }
             }),
             headers: new HttpHeaders().set('x-auth-token', token)
