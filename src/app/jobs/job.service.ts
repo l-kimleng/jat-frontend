@@ -19,6 +19,37 @@ export class JobService {
                 }
             }),
             headers: new HttpHeaders().set('x-auth-token', token)
-        })
+        });
+    }
+
+    createJob(job: Job) {
+        const token = localStorage.getItem('jat-token');
+        return this._http.post<Job>(`${environment.apiUrl}/api/jobs`,
+            {
+                title : job.title,
+                postDate : job.postDate,
+                appliedDate: job.appliedDate,
+                url : job.url,
+                isExpired: job.isExpired.toString(),
+                company : {
+                    name: job.company.name,
+                    location: {
+                        city: job.company.location.city,
+                        state: job.company.location.state,
+                        zipCode : job.company.location.zipCode
+                    }
+                },
+                recruiter : {
+                    name : job.recruiter.name,
+                    phone: job.recruiter.phone,
+                    title: job.recruiter.title,
+                    company : job.recruiter.company
+                }
+            },
+            {
+                headers: new HttpHeaders().set("x-auth-token", token),
+                observe: "response"                
+            }
+        );
     }
 }

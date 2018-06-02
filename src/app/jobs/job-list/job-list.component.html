@@ -37,7 +37,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let j of jobs; let i = index">
-                <th scope="row">1</th>
+                <th scope="row">{{i + 1}}</th>
                 <td>{{j.title}}</td>
                 <td>{{j.postDate | date}}</td>
                 <td>{{j.appliedDate | date}}</td>

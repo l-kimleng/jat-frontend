@@ -2,12 +2,12 @@ import { Company } from './company';
 import { Recruiter } from './recruiter';
 
 export interface Job {
-    id: String,
-    title: String,
+    id: string,
+    title: string,
     postDate: Date,
     appliedDate: Date,
-    url: String,
-    isExpired: Boolean,
+    url: string,
+    isExpired: boolean,
 
     company: Company,
     recruiter: Recruiter

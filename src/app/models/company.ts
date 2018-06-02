@@ -1,7 +1,7 @@
 import { Location } from './location';
 
 export interface Company {
-    id: String,
-    name: String,
+    id: string,
+    name: string,
     location: Location
 }
