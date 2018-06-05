@@ -22,7 +22,7 @@ export class JobListComponent implements OnInit {
     this.query = {
       isSortAscending: true,
       page: 1, 
-      pageSize: 5
+      pageSize: 50
     };
 
     this.getJob();

@@ -30,4 +30,10 @@ export class AuthService {
             observe: 'response'
         });
     }
+
+    getCurrentUser(token) {
+        return this._http.get(`${environment.apiUrl}/api/login/me`, {
+            headers: new HttpHeaders().set('x-auth-token', token)
+        });
+    }
 }

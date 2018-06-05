@@ -27,10 +27,6 @@ export class JobService {
         const token = localStorage.getItem('jat-token');        
         const title = (jobQuery.title === undefined || jobQuery.title === "")? "!2$" : jobQuery.title;
         const company = (jobQuery.company === undefined || jobQuery.company === "") ? "!2$" : jobQuery.company;
-        console.log("Title");
-        console.log(title);
-        console.log("Company");
-        console.log(company);
         return this._http.get<Array<Job>>(`${environment.apiUrl}/api/jobs/${title+''}/${company+''}`, {
             params: new HttpParams ({
                 fromObject: {
