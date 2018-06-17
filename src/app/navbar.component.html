@@ -14,8 +14,9 @@
         </li>              
       </ul>
       <div class="float-sm-right my-2 my-lg-0">
-        <span routerLink="/register" class="btn btn-success my-2 mr-3 my-sm-0 text-uppercase" >Sign Up</span>
-        <span routerLink="/login" class="btn btn-info my-2 my-sm-0 text-uppercase" >Log in</span>
+        <span routerLink="/register" class="btn btn-success my-2 mr-3 my-sm-0 text-uppercase" *ngIf='!isLogin()'>Sign Up</span>
+        <span routerLink="/login" class="btn btn-info my-2 my-sm-0 text-uppercase" *ngIf='!isLogin()' >Log in</span>
+        <span class="btn btn-warning my-2 my-sm-0 text-uppercase" (click) = 'logout()' *ngIf='isLogin()' >Log out</span>
       </div>
     </div>
   </nav>
