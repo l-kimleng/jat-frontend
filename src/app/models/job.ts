@@ -2,7 +2,7 @@ import { Company } from './company';
 import { Recruiter } from './recruiter';
 
 export interface Job {
-    id: string,
+    _id: string,
     title: string,
     postDate: Date,
     appliedDate: Date,

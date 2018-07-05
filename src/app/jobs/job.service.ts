@@ -23,6 +23,13 @@ export class JobService {
         });
     }
 
+    deleteJob(id: string) {
+        const token = localStorage.getItem('jat-token');
+        return this._http.delete(`${environment.apiUrl}/api/jobs/${id}`, {
+            headers: new HttpHeaders().set('x-auth-token', token)
+        });
+    }
+
     filterJob(jobQuery: JobQueryObject) {
         const token = localStorage.getItem('jat-token');        
         const title = (jobQuery.title === undefined || jobQuery.title === "")? "!2$" : jobQuery.title;

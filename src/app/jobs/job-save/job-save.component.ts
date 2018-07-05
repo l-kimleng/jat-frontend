@@ -24,24 +24,24 @@ export class JobSaveComponent implements OnInit {
 
   initForm() {
     this.job = {
-      id: "",
+      _id: "",
       title: "",
       postDate: new Date(),
       appliedDate: new Date(),
       url: "",
       isExpired: false,
       company: {
-        id: "",
+        _id: "",
         name: "",
         location: {
-          id: "",
+          _id: "",
           city: "",
           state: "",
           zipCode: ""
         }
       },
       recruiter: {
-        id: "",
+        _id: "",
         name: "",
         title: "",
         company: "",
@@ -53,8 +53,8 @@ export class JobSaveComponent implements OnInit {
   }
 
   saveJob() {
-    this.job.postDate = new Date(this.modelPostDate.year, this.modelPostDate.month, this.modelPostDate.day);
-    this.job.appliedDate = new Date(this.modelAppliedDate.year, this.modelAppliedDate.month, this.modelAppliedDate.day);
+    this.job.postDate = new Date(this.modelPostDate.year, this.modelPostDate.month - 1, this.modelPostDate.day);
+    this.job.appliedDate = new Date(this.modelAppliedDate.year, this.modelAppliedDate.month - 1, this.modelAppliedDate.day);
     this._jobService.createJob(this.job)
       .subscribe(res => {
         this.initForm();

@@ -1,6 +1,6 @@
 
 export interface Recruiter {
-    id: String,
+    _id: String,
     name: String,
     phone: String,
     title: String,

@@ -1,5 +1,5 @@
 export class Location {
-    id: String;
+    _id: String;
     city: String;
     state: String;
     zipCode: String;

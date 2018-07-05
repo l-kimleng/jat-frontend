@@ -1,7 +1,7 @@
 import { Location } from './location';
 
 export interface Company {
-    id: string,
+    _id: string,
     name: string,
     location: Location
 }
