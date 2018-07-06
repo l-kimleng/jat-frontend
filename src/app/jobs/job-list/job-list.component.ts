@@ -31,7 +31,6 @@ export class JobListComponent implements OnInit {
   getJob() {
     this._jobService.getJob(this.query).subscribe(res => {
       this.jobs = res;
-      console.log(this.jobs);
     }, error => {
       console.log(error);
     });
@@ -39,8 +38,7 @@ export class JobListComponent implements OnInit {
 
   deleteJob(id: string) {
     this._jobService.deleteJob(id).subscribe(res => {
-      var index = this.jobs.findIndex(x => x._id === id);
-      console.log(index);
+      var index = this.jobs.findIndex(x => x._id === id);     
       this.jobs.splice(index, 1);
     }, error => {
       console.log(error);
