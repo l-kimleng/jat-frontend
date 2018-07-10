@@ -15,6 +15,7 @@ export class JobListComponent implements OnInit {
   jobQuery: JobQueryObject;
   title: string;
   company: string;
+  today: number = Date.now();
 
   constructor(private _jobService: JobService) { }
 
